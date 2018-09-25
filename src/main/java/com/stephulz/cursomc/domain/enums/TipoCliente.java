@@ -2,15 +2,14 @@ package com.stephulz.cursomc.domain.enums;
 
 public enum TipoCliente {
 
-	PESSOA_FISICA(1, "Pessoa Física"),
-	PESSOA_JURIDICA(2, "Pessoa Jurídica");
-	
+	PESSOA_FISICA(1, "Pessoa Física"), PESSOA_JURIDICA(2, "Pessoa Jurídica");
+
 	private int cod;
 	private String descricao;
-	
+
 	private TipoCliente(int cod, String descricao) {
 		this.cod = cod;
-		this.descricao =descricao;
+		this.descricao = descricao;
 	}
 
 	public int getCod() {
@@ -22,16 +21,16 @@ public enum TipoCliente {
 	}
 
 	public static TipoCliente toEnum(Integer cod) {
-		if(cod == null) {
+		if (cod == null) {
 			return null;
 		}
-		
-		for(TipoCliente x : TipoCliente.values()) {
-			if(cod.equals(x.getCod())) {
+
+		for (TipoCliente x : TipoCliente.values()) {
+			if (cod.equals(x.getCod())) {
 				return x;
 			}
 		}
-		throw new IllegalArgumentException("Id inválido "+cod);
+		throw new IllegalArgumentException("Id inválido " + cod);
 	}
-	
+
 }
